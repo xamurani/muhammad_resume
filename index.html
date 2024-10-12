@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+         <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Nunito', sans-serif;
+            color: #333;
+        }
+
+        body{
+            background-color: #94D9EA;
+        }
+
+        p {
+            text-align:justify;
+        }
+
+        .main-content{
+            min-height: 100vh;
+            width: 80%;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .left-section{
+            grid-column: span 2;
+            height: 100%;
+            background-color: #00324A;
+        }
+        .right-section{
+            grid-column: span 5;
+            background-color: #f7f7f7;
+            height: 100%;
+        }
+
+
+        .left-content{
+            padding: 2rem 3rem;
+        }
+        .profile{
+            width: 100%;
+            border-bottom: 2px solid #002333;
+        }
+
+        .image{
+            width: 100%;
+            text-align: center;
+        }
+        .profile img{
+            width: 100%;
+            border-radius: 50%;
+            border: 8px solid #002333;
+            transition: transform 0.3s ease; 
+        }
+
+        .profile img:hover {
+            transform: scale(1.1); /* Scale up slightly on hover */
+        }
+
+        .contact-info ul li i {
+            transition: color 0.3s ease;
+        }
+        .contact-info ul li:hover i {
+            color: #0073e6; /* Change icon color on hover */
+        }
+
+        .name{
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1.2rem 0;
+        }
+
+        .career{
+            font-size: 1.2rem;
+            color: #94D9EA;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 1rem;
+        }
+
+        .main-title{
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f7f7f7ec;
+            padding-top: 3rem;
+        }
+
+        .contact-info ul{
+            padding-top: 2rem;
+        }
+
+        .contact-info ul li{
+            margin: auto;
+            padding: .4rem 0;
+            display: flex;
+            align-items: center;
+            color: #718096;
+        }
+        .contact-info ul li i{
+            padding-right: 1rem;
+            font-size: 1.2rem;
+            color: #2D9CDB;
+        }
+
+        .skills-section ul{
+            padding-top: 2rem;
+        }
+        .skills-section ul li{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: .4rem 0;
+        }
+
+        .progress-bar{
+            width: 100%;
+            height: .4rem;
+            background-color: #2f81ed5b;
+            position: relative;
+            border-radius: 12px;
+        }
+        .progress{
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: #2D9CDB;
+            border-radius: 12px;
+        }
+        .js-progress{
+            width: 70%;
+        }
+        .ps-progress{
+            width: 90%;
+        }
+        .j-progress{
+            width: 85%;
+        }
+        .c-progress{
+            width: 40%;
+        }
+        .n-progress{
+            width: 63%;
+        }
+        .w-progress{
+            width: 78%;
+        }
+
+
+        .skill-title{
+            text-transform: uppercase;
+            color: #f7f7f7;
+            font-size: 1rem;
+        }
+
+        .sub-title{
+            padding-top: 2rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #f7f7f7;
+        }
+
+        .sub-para{
+            color: #ccc;
+            padding: .4rem 0;
+        }
+
+        .references-section li{
+            color: #ccc;
+            padding: .2rem 0;
+        }
+        .references-section li i{
+            padding-right: .5rem;
+            font-size: 1.2rem;
+            color: #2D9CDB;
+        }
+
+        .right-main-content{
+            padding: 2rem 3rem;
+        }
+
+
+        .right-title{
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #2F80ED;
+            margin-bottom: 1.2rem;
+            position: relative;
+        }
+
+        .right-title::after{
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: .2rem;
+            background-color: #ccc;
+            border-radius: 12px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .para{
+            line-height: 1.6rem;
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        .sect{
+            padding-bottom: 2rem;
+        }
+
+        .timeline{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tl-title{
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+            color: #002333;
+            text-transform: uppercase;
+        }
+        .tl-title-2{
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+            color: #2D9CDB;
+            text-transform: uppercase;
+        }
+
+        .tl-content{
+            border-left: 1px solid #ccc;
+            padding-left: 2rem;
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .tl-title-2::before{
+            content: "";
+            position: absolute;
+            width: .7rem;
+            height: .7rem;
+            background-color: #2D9CDB;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            left: 0;
+        }
+
+        /*Media Querries*/
+        @media screen and (max-width:823px){
+            .right-title::after{
+                width: 40%;
+            }
+        }
+        @media screen and (max-width:681px){
+            .right-title::after{
+                width: 30%;
+            }
+        }
+        @media screen and (max-width:780px){
+            .timeline{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        @media screen and (max-width:780px){
+            .left-section{
+                grid-column: span 3;
+            }
+            .right-section{
+                grid-column: span 4;
+            }
+        }
+        @media screen and (max-width:1200px){
+            .main-content{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .profile img{
+                width: 40%;
+            }
+        }
+        @media screen and (max-width:700px){
+            .profile img{
+                width: 60%;
+            }
+        }
+        @media screen and (max-width:390px){
+            .name{
+                font-size: 1.5rem;
+            }
+        } 
+
+
+        a {
+            color: #718096;
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        a:hover {
+            color: #0073e6; /* Optional: Change link color on hover */
+        }
+    </style>
+
+
+</head>
+<body>
+    <main class="main-content">
+        <section class="left-section">
+            <div class="left-content">
+                <div class="profile">
+                    <div class="image">
+                        <img src="https://github.com/xamurani/cv-picture/blob/main/Muhammad.jpg?raw=true" alt="">
+                    </div>
+                    <h2 class="name">Muhammad</h2>
+                    <p class="career">Computer Scientist</p>
+                </div>
+                <div class="contact-info">
+                    <h3 class="main-title">Contact Info</h3>
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            +92 321 8996946
+                        </li>
+                        <li>
+                            <i class="fa fa-fax"></i>
+                            <a href="mailto:zamuranimuhammed@gmail.com">Email Me</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-globe"></i>
+                            <a href="http://zamurani.great-site.net" target="_blank">My Portfolio</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-facebook"></i>
+                            <a href="https://www.facebook.com/MuhammedZamurani?mibextid=ZbWKwL" target="_blank">Facebook</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-instagram"></i>
+                            <a href="https://www.instagram.com/muhammad_xamurani?igsh=MWZ0bnNxc2E0NHdvMg==" target="_blank">Instagram</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            Mulla Mussa Bazar Meeri Bugh Turbat Kech, Balochistan, Pakistan
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/mr-muhammad-1a6aa726b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/xamurani" target="_blank">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills-section">
+                    <h3 class="main-title">Skills</h3>
+                    <ul>
+                        <li>
+                            <p class="skill-title">Javascript</p>
+                            <div class="progress-bar">
+                                <div class="progress js-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">Django</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">Python</p>
+                            <div class="progress-bar">
+                                <div class="progress j-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">C++</p>
+                            <div class="progress-bar">
+                                <div class="progress c-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">Bootstrap</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">Node js</p>
+                            <div class="progress-bar">
+                                <div class="progress n-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">html/css</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">illustrator</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="skill-title">Wordpress</p>
+                            <div class="progress-bar">
+                                <div class="progress ps-progress"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="references-section">
+                    <h3 class="main-title">Certifications</h3>
+                    <div class="referee">
+                        <h6 class="sub-title">Intro to Programming</h6>
+                        <p class="sub-para">Kaggle</p>
+                        <!-- <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                07661892982
+                            </li>
+                            <li>
+                                <i class="fa fa-fax"></i>
+                                loremipsum@gmail.com
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Google Digital Garage</h6>
+                        <p class="sub-para">The 
+                            Open University</p>
+                        <!-- <ul>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                07661892982
+                            </li>
+                            <li>
+                                <i class="fa fa-fax"></i>
+                                loremipsum@gmail.com
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Typing</h6>
+                        <p class="sub-para">Soggat Technical Training Center Kallag</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">(Microsoft Office) ITC, MS 
+                            Word, MS Power Point, MS Ex
+                            cel, MS Access and Internet</h6>
+                        <p class="sub-para">Soggat Technical Training Center 
+                            Kallag</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Typing</h6>
+                        <p class="sub-para">Soggat Technical Training Center Kallag</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Advance Programming Course 
+                            using Visual Studio C# .NET / 
+                            SQL / MS SQL Server Database </h6>
+                        <p class="sub-para">Baloch Club | Baloch Social De
+                            velopment (BSD) | Kingdom of 
+                            Bahrain </p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Computer Basic </h6>
+                        <p class="sub-para">Government 
+                            of Balochistan Director of Man
+                            power and Training Trade Testing 
+                            Board</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Google Certifications on Tech
+                            nical Support Fundamentals</h6>
+                        <p class="sub-para">Coursera</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Google Ads Apps Certification </h6>
+                        <p class="sub-para">Google Ads (Google Partner)</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Web Development Workshop</h6>
+                        <p class="sub-para">Nust Balochistan Campus</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">General Secretary</h6>
+                        <p class="sub-para">NBC Information Technology, Robotics and Data Science Club</p>
+                    </div>
+                    <div class="referee">
+                        <h6 class="sub-title">Intership</h6>
+                        <p class="sub-para">LearnOBots (Private) Limited</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="right-section">
+            <div class="right-main-content">
+                <section class="about sect">
+                    <h2 class="right-title">About Me</h2>
+                    <p class="para">
+                        I am a proficient coder with a strong background in computer science, currently pursuing a bachelor's degree at NUST. I have extensive experience in developing software solutions across various domains, including e-commerce, education, health, and finance, and have worked with multiple programming languages and technologies such as C++, Python, Java, C#, JavaScript, MySQL, and Flutter. I am passionate about learning new skills, collaborating with other coders, and mentoring those interested in coding. If you're looking for a skilled coder capable of delivering high-quality software solutions, I'm eager to contribute to your company's success!
+                    </p>
+                </section>
+
+                <section class="experince sect">
+                    <h2 class="right-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Ruzhn English Language Center Bugh</h5>
+                            <p class="para">2017 - 2018</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">English Language Teacher</h5>
+                                <p class="para">
+                                    Facilitated engaging and dynamic English language lessons for diverse groups of 
+                                    students, fostering a supportive and interactive learning environment. Developed 
+                                    tailored curriculum, activities related to speaking, writing, listening and lesson plans 
+                                    to meet the varying needs and proficiency levels of students. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Soggat Academy Kallag</h5>
+                            <p class="para">2018 - Present</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Computer Science Teacher</h5>
+                                <p class="para">
+                                Designed and delivered comprehensive computer science curriculum, encompassing 
+                                topics such as programming languages, algorithms, data structures, and computer 
+                                systems, and practical lab tasks and their solutions to secondary school students. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Intership at LearnOBots</h5>
+                            <p class="para">Six Weeks</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Software Engineering Intern</h5>
+                                <p class="para">
+                                    My tasks included providing support in the development of software applications, assisting with python Django-based projects, and helping in the organization and execution of STEAM Workshop. I also supported the team in conducting programming and robotics activities, while contributing to general projects tasks as needed. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Apple</h5>
+                            <p class="para">2020 - Present</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Senior Developer</h5>
+                                <p class="para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias cupiditate vitae 
+                                    voluptatem deleniti, 
+                                    laboriosam odio nobis quae fugit facilis quo.
+                                </p>
+                            </div>
+                        </div>
+                    </div> -->
+                </section>
+                <section class="education sect">
+                    <h2 class="right-title">education</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">NUST Balochistan Campus</h5>
+                            <p class="para">2021 - 2025</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Bachelor of Computer Science</h5>
+                                <p class="para">
+                                    CGPA:  3.67/4.00 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Govt. Atta Shad Dergree College Turbat</h5>
+                            <p class="para">2019 - 2021</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Higher Secondary School Certificate, Computer Science </h5>
+                                <p class="para">
+                                    Grade: A
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Sayad Hashmi High School Turbat Kech</h5>
+                            <p class="para">2017 - 2019</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Secondary School Certificate, Biology/Biological Sciences, General</h5>
+                                <p class="para">
+                                    Grade: A
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="awards sect">
+                    <h2 class="right-title">Projects</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Android Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Caption Generator Application</h5>
+                                <p class="para">
+                                Caption Generator is a mobile application that harnesses the power of machine learning 
+                                to automatically generate captions for images. Whether you're capturing snapshots on
+                                the-go or selecting photographs from your gallery, this app offers a unique way to add 
+                                meaning and context to your visual content and to generate summaries and insights 
+                                from inputted pictures, done using Flutter.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Desktop Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Automated Attendance System using facial Recognition </h5>
+                                <p class="para">                                 
+                                    The Automated Attendance System using Facial Recognition revolutionizes attendance tracking by employing facial recognition technology. This innovative system allows employees to simply show their faces to a camera for quick and accurate attendance logging, eliminating outdated methods like manual entry and card swipes. By streamlining the process, it enhances security and prevents proxy attendance, enabling more efficient attendance management across various industries.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Microsoft Access</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Automated Identification Card Generation System - database </h5>
+                                <p class="para">
+                                    It is a system which generate ID card of an organization through the data stored in its 
+                                    database. It is done using Microsoft Access.        
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Desktop Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Hostel Management System</h5>
+                                <p class="para">
+                                    A desktop application that uses dynamic programming and data structures to optimize 
+                                    the scheduling and allocation of resources for a Hostel Management System. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Matlab Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Brain Tumor Detector</h5>
+                                <p class="para">
+                                    Brain tumors are abnormal cell growths in the brain that can be malignant or benign, making early detection vital for effective treatment and improved patient outcomes. This project focuses on developing a MATLAB-based graphical user interface (GUI) for detecting brain tumors through digital image processing techniques. Utilizing MATLAB's powerful image processing toolbox, the project analyzes MRI images to identify potential tumor regions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Django Web Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">Text Utilizer</h5>
+                                <p class="para">
+                                    A tool for analyzing text data in Django Backend
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">Django Web Application</h5>
+                            <!-- <p class="para">June 2016</p> -->
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">E-Commerce-Website</h5>
+                                <p class="para">
+                                    it is a Django-based e-commerce website with two main applications: 
+                                    shop and blog. The shop app allows users to browse and purchase products, 
+                                    while the blog app enables content creation and management for blogging.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
