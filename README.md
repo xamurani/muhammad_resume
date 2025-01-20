@@ -2,4 +2,4 @@ This repository contains my resume, detailing my educational background, skills,
 
 Feel free to explore the document and connect with me for potential collaborations or opportunities!
 
-**My Resume Link:** - https://xamurani.github.io/muhammad/
+**My Resume Link:** - https://xamurani.github.io/muhammad_resume/
